@@ -22,7 +22,7 @@ public class Main {
                         System.out.println("Digite a quantidade de funcionários que você deseja cadastrar:"); 
                         int quantidadeCadastroFuncionario = leitura.nextInt();
 
-                        for( i = 0; i<quantidadeCadastroFuncionario; i++){
+                        for( i = 0; i<quantidadeCadastroFuncionario; i++ ){
 
                             Funcionario funcionario = new Funcionario();
                             System.out.println("-----------------------------------------------------------------------");
@@ -30,7 +30,6 @@ public class Main {
                             System.out.println("Digite o nome do funcionário " +(i+1)+":" ); 
                             funcionario.setNome(leitura.nextLine());
                             leitura.nextLine();
-                
                 
                             System.out.println("Digite o cpf do funcionário " +(i+1)+":"); 
                             funcionario.setCpf(leitura.nextLine());
@@ -56,7 +55,7 @@ public class Main {
 
                     case 2:
 
-                        for ( i = 0; i < listaFuncionario.size(); i++) {
+                        for ( i = 0; i < listaFuncionario.size(); i++ ) {
                             Funcionario funcionario = (Funcionario) listaFuncionario.get(i);
                             System.out.println("-----------------------------------------------------------------------");
                             System.out.println("Dados dos funcionários:");
@@ -69,24 +68,21 @@ public class Main {
 
                         System.out.println("Digite os seguintes códigos para escolher o tipo de funcionário: \n1 - Gerente \n2 - Desenvolvedor \n3 - Estagiário");
                         int escolha = leitura.nextInt();
+
                         if(escolha == 1){
                             System.out.println("Você é um Gerente! \nVocê pode realizar reuniões!!!");
                             Gerente gerente = new Gerente();
                             gerente.realizarReuniao();
-                            
-                            
 
                         } if(escolha == 2){
                             System.out.println("Você é um Desenvolvedor! \nVocê pode programar (tadinho) !!!");
                             Desenvolvedor desenvolvedor = new Desenvolvedor();
                             desenvolvedor.programar();
-                            
 
                         } if(escolha == 3){
                             System.out.println("Você é um Estagiário! \nVocê pode fazer tarefas!!!");
                             Estagiario estagiario = new Estagiario();
                             estagiario.fazerTarefa();
-
                         }
                     break; 
 

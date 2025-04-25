@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Desenvolvedor extends Funcionario {  
+
+    public Desenvolvedor(){};
     
     @Override
     public String mostrarDados () {

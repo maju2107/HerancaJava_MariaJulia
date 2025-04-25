@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Estagiario extends Funcionario {
+
+    public Estagiario(){};
     
     @Override
     public String mostrarDados () {

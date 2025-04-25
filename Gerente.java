@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Gerente extends Funcionario {
 
+    public Gerente(){};
 
     @Override
     public String mostrarDados () {

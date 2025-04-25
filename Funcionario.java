@@ -1,7 +1,7 @@
 public class Funcionario extends Pessoa {
 
     private String nome;
-    private double salario;
+    private float salario;
     private String departamento;
 
     public Funcionario(){};
@@ -10,7 +10,7 @@ public class Funcionario extends Pessoa {
         this.nome = nome;
     }
 
-    public void setSalario(double salario){
+    public void setSalario(float salario){
         this.salario = salario;
     }
 
@@ -22,7 +22,7 @@ public class Funcionario extends Pessoa {
         return nome;
     }
 
-    public double getSalario(){
+    public float getSalario(){
         return salario;
     }
 

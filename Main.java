@@ -18,6 +18,7 @@ public class Main {
         
                 switch(opcao){
                     case 1:
+
                         System.out.println("Digite a quantidade de funcionários que você deseja cadastrar:"); 
                         int quantidadeCadastroFuncionario = leitura.nextInt();
 
@@ -44,7 +45,7 @@ public class Main {
                             leitura.nextLine();
 
                             System.out.println("Digite o salário do funcionário " +(i+1)+":"); 
-                            funcionario.setSalario(leitura.nextDouble());
+                            funcionario.setSalario(leitura.nextFloat());
                             leitura.nextLine();
                             
                             listaFuncionario.add(funcionario);
@@ -55,17 +56,38 @@ public class Main {
 
                     case 2:
 
-                    for ( i = 0; i < listaFuncionario.size(); i++) {
-                        Funcionario funcionario = (Funcionario) listaFuncionario.get(i);
-                        System.out.println("-----------------------------------------------------------------------");
-                        System.out.println("Dados dos funcionários:");
-                        System.out.println("Funcionário "+(i+1)+ " \nNome: " + funcionario.getNome() + " \nCPF: " + funcionario.getCpf() + " \nData de nascimento: " + funcionario.getDataNascimento()+ " \nDepartamento: " + funcionario.getDepartamento() + " \nSalário: " + funcionario.getSalario());
-                    }  
+                        for ( i = 0; i < listaFuncionario.size(); i++) {
+                            Funcionario funcionario = (Funcionario) listaFuncionario.get(i);
+                            System.out.println("-----------------------------------------------------------------------");
+                            System.out.println("Dados dos funcionários:");
+                            System.out.println("Funcionário "+(i+1)+ " \nNome: " + funcionario.getNome() + " \nCPF: " + funcionario.getCpf() + " \nData de nascimento: " + funcionario.getDataNascimento()+ " \nDepartamento: " + funcionario.getDepartamento() + " \nSalário: " + funcionario.getSalario());
+                        }  
                        
                     break; 
 
                     case 3:
-                        
+
+                        System.out.println("Digite os seguintes códigos para escolher o tipo de funcionário: \n1 - Gerente \n2 - Desenvolvedor \n3 - Estagiário");
+                        int escolha = leitura.nextInt();
+                        if(escolha == 1){
+                            System.out.println("Você é um Gerente! \nVocê pode realizar reuniões!!!");
+                            Gerente gerente = new Gerente();
+                            gerente.realizarReuniao();
+                            
+                            
+
+                        } if(escolha == 2){
+                            System.out.println("Você é um Desenvolvedor! \nVocê pode programar (tadinho) !!!");
+                            Desenvolvedor desenvolvedor = new Desenvolvedor();
+                            desenvolvedor.programar();
+                            
+
+                        } if(escolha == 3){
+                            System.out.println("Você é um Estagiário! \nVocê pode fazer tarefas!!!");
+                            Estagiario estagiario = new Estagiario();
+                            estagiario.fazerTarefa();
+
+                        }
                     break; 
 
                     case 4:
@@ -79,7 +101,6 @@ public class Main {
                 }
             }while(opcao!= 4);
                 
-
     }
     
         private static void MenudeOpções(){
@@ -89,7 +110,6 @@ public class Main {
             System.out.println("2 - Exibir os dados cadastrados: ");
             System.out.println("3 - Escolher o tipo de funcionário (Gerente, Desenvolvedor ou Estagiário): ");
             System.out.println("4 - Sair do sistema: ");
-  
         }
 
 }

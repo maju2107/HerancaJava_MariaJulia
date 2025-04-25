@@ -1,11 +1,17 @@
-public class Desenvolvedor extends Funcionario {
+import java.util.Scanner;
+
+public class Desenvolvedor extends Funcionario {  
     
+    @Override
     public String mostrarDados () {
         return "";
-
     }
-    public String programar () {
-        return "";
+
+    public void programar () {
+        Scanner leitura2 = new Scanner(System.in);
+
+        System.out.println("Digite sua linguagem de preferência:");
+        String linguagemProgramacao = leitura2.nextLine();
 
     }
 }

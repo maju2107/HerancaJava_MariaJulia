@@ -1,34 +1,67 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main (String[] args){
 
-        Scanner scanner = new Scanner(System.in);
+        ArrayList<Funcionario> listaFuncionario = new ArrayList<Funcionario>(); 
+        Scanner leitura = new Scanner(System.in);
+        int opcao;
+        int i;
+       
 
         do {
                 MenudeOpções();
 
                 System.out.print("Digite o número da opção desejada: ");
-                int opcao = scanner.nextInt();
+                opcao = leitura.nextInt();
         
                 switch(opcao){
                     case 1:
                         System.out.println("Digite a quantidade de funcionários que você deseja cadastrar:"); 
-                        int quantidadeCadastroFuncionario = scanner.nextInt();
+                        int quantidadeCadastroFuncionario = leitura.nextInt();
 
-                        for(int i = 0; i<quantidadeCadastroFuncionario; i++){
+                        for( i = 0; i<quantidadeCadastroFuncionario; i++){
 
+                            Funcionario funcionario = new Funcionario();
+                            System.out.println("-----------------------------------------------------------------------");
+                            leitura.nextLine();
+                            System.out.println("Digite o nome do funcionário " +(i+1)+":" ); 
+                            funcionario.setNome(leitura.nextLine());
+                            leitura.nextLine();
+                
+                
+                            System.out.println("Digite o cpf do funcionário " +(i+1)+":"); 
+                            funcionario.setCpf(leitura.nextLine());
+                            leitura.nextLine();
+
+                            System.out.println("Digite a data de nascimento do funcionário " +(i+1)+":"); 
+                            funcionario.setDataNascimento(leitura.nextLine());
+                            leitura.nextLine();
+
+                            System.out.println("Digite o departamento do funcionário " +(i+1)+":"); 
+                            funcionario.setDepartamento(leitura.nextLine());
+                            leitura.nextLine();
+
+                            System.out.println("Digite o salário do funcionário " +(i+1)+":"); 
+                            funcionario.setSalario(leitura.nextDouble());
+                            leitura.nextLine();
+                            
+                            listaFuncionario.add(funcionario);
+                
                         }
-                        System.out.println("Digite o nome:"); 
-                       
-
-
-                        System.out.println("Pessoinha cadastrada com sucesso!;) ");
+                        System.out.println("Funcionário(s) cadastrado(s) com sucesso!;) ");
                     break; 
 
                     case 2:
+
+                    for ( i = 0; i < listaFuncionario.size(); i++) {
+                        Funcionario funcionario = (Funcionario) listaFuncionario.get(i);
+                        System.out.println("-----------------------------------------------------------------------");
+                        System.out.println("Dados dos funcionários:");
+                        System.out.println("Funcionário "+(i+1)+ " \nNome: " + funcionario.getNome() + " \nCPF: " + funcionario.getCpf() + " \nData de nascimento: " + funcionario.getDataNascimento()+ " \nDepartamento: " + funcionario.getDepartamento() + " \nSalário: " + funcionario.getSalario());
+                    }  
                        
-                        System.out.println("Dados atualizados com sucesso!:) ");
                     break; 
 
                     case 3:
@@ -43,18 +76,20 @@ public class Main {
                         System.out.println("Opção não encontrada dentre as fornecidas pelo sistema!");     
                     break;
 
-                }while(opcao!= 4);
-            }
+                }
+            }while(opcao!= 4);
                 
 
     }
     
         private static void MenudeOpções(){
-            System.out.print("Bem-vindo ao sistema de Cadastro de funcionários!: ");
-            System.out.print("Escolha uma das opções abaixo: ");
-            System.out.print("1 - Cadastrar novos funcionário: ");
-            System.out.print("2 - Exibir os dados cadastrados: ");
-            System.out.print("3 - Escolher o tipo de funcionário (Gerente, Desenvolvedor ou Estagiário): ");
-            System.out.print("4 - Sair do sistema: ");
+            System.out.println("Bem-vindo ao sistema de Cadastro de funcionários!: ");
+            System.out.println("Escolha uma das opções abaixo: ");
+            System.out.println("1 - Cadastrar novos funcionário: ");
+            System.out.println("2 - Exibir os dados cadastrados: ");
+            System.out.println("3 - Escolher o tipo de funcionário (Gerente, Desenvolvedor ou Estagiário): ");
+            System.out.println("4 - Sair do sistema: ");
+  
         }
+
 }

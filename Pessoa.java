@@ -1,11 +1,11 @@
 public class Pessoa {
 
-    private int cpf;
+    private String cpf;
     private String dataNascimento;
     
     public Pessoa(){};
 
-    public void setCpf(int cpf){
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
 
@@ -13,7 +13,7 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    public int getCpf(){
+    public String getCpf(){
         return cpf;
     }
 

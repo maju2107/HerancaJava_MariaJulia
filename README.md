@@ -18,6 +18,9 @@
 
 -----------
 ## Vídeo explicativo 📽️
+
+- https://drive.google.com/file/d/1_CW9MN7hKmEVukmZ2a8K-bJOeeMBrG_8/view?usp=sharing
+
 -----------
 ## Como Executar 🖥️
 1. Clone o repositório:
